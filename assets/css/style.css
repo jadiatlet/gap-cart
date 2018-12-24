@@ -1,0 +1,87 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Dosis', sans-serif;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container-item-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.container-item-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.login-image {
+  padding: 140px 0 30px 0;
+  width: 80%;
+  height: 80%;
+}
+
+.container-form {
+  padding-top: 120px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.label-1 {
+    font-size: 20pt;
+}
+
+.label-2 {
+    font-size: 12pt;
+    padding: 10px 0 0 0 ;
+    color: #535151;
+}
+
+.form-link {
+    display: flex;
+    width: 75%;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding-top: 15px;
+}
+
+.email {
+    padding: 20px 0 2px 15px;
+}
+
+.input-form {
+    border: 0px ;
+    background: #e4f5da;
+    border-radius: 50px;
+    padding: 15px 25px;
+    font-size: 12pt;
+}
+
+.input-submit {
+    margin: 15px 0px 0 0px ;
+    width: 30%;
+    padding: 10px;
+    border: 0px;
+    border-radius: 20px;
+    background: #62ff77;
+    color: #ffffff;
+    letter-spacing: 7px;
+    font-size: 12pt;
+    font-weight: 900;
+}
+
+.input-submit:hover {
+    background: #91f19e;
+    cursor: pointer;
+}
