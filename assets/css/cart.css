@@ -3,10 +3,6 @@ body {
   font-family: 'News Cycle', sans-serif;
 }
 
-a {
-  text-decoration: none;
-}
-
 .area {
   display: flex;
   flex-flow: row wrap;
@@ -14,28 +10,16 @@ a {
   margin-right: auto;
 }
 
-@media (min-width: 1200px) {
-  .area {
-    width: 1140px;
-  }
-}
-
-.navbar {
-  justify-content: space-between;
-}
-
 .navbar .brand {
-  display: block;
   font-size: 16px;
   color: #fe4c01;
   margin: 22px;
   font-weight: 600;
+  text-decoration: none;
 } 
 
-@media (min-width: 768px) {
-  .navbar .list {
-    display: flex;
-  }
+.navbar {
+  justify-content: space-between;
 }
 
 .list a {
@@ -46,6 +30,19 @@ a {
   color: #fe4c01;
   font-size: 14px;
   font-weight: bold;
+  text-decoration: none;
+}
+
+@media (min-width: 1200px) {
+  .area {
+    width: 1140px;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar .list {
+    display: flex;
+  }
 }
 
 .heading-title {
@@ -58,3 +55,120 @@ a {
 
 /* Main App */
 
+.main-app {
+  background-color: #fff;
+  color: #263238;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1200px) {
+  .main-app {
+    width: 1140px;
+  }
+}
+
+/* Option > Select */
+
+.option-cart {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.select-catagory, .select-items {
+  margin: 15px 0;
+  padding: 0 15px;
+}
+
+.option-cart select {
+  padding: 2px 10px;
+  background: transparent;
+  border-radius: 5px;
+  color: #455a64;
+  outline: none;
+  cursor: pointer;
+}
+
+.items2, .items3 {
+  display: none;
+}
+
+/* Price Item */
+
+.price-item {
+  display: flex;
+  justify-content: center;
+}
+
+.price-tag {
+  background: #fafafa;
+  color: #78909c;
+  padding: 10px 120px;
+  border-radius: 5px;
+  margin: 15px;
+}
+
+/* Qty Item */
+
+.qty-item {
+  margin: 20px 15px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.qty-item span{
+  color: #455a64;
+  margin-right: 15px;
+}
+
+.qty-item input{
+  width: 65px;
+  color: #455a64;
+  outline: none;
+  border-radius: 5px;
+  border: 0.5px solid #78909c;
+  background: #fafafa;
+  padding: 5px;
+}
+
+/* Button Control */
+
+.control-button button {
+  font-size: 12px;
+  padding: 8px 20px;
+  border-radius: 4px;
+  border: 2px solid;
+  background: transparent;
+  cursor: pointer;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.26);
+  margin: 8px;
+  outline: none;
+}
+
+
+/* Table Display */
+
+.cart-table {
+  border: 1px solid #78909c;
+  padding-bottom: 300px;
+  margin: 15px 15px;
+  color: #455a64;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.cart-table th {
+  font-size: 13px;
+  background: #f2f0e6;
+}
+
+.cart-table th,
+.cart-table td {
+  padding: 2.5px 60px;
+  border: 1px solid #d9d7ce;
+}
