@@ -78,10 +78,10 @@
 }
 
 .submit-list {
-    display: flex;
-    padding-top: 20px;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  padding-top: 20px;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .input-submit {
@@ -102,7 +102,15 @@
 }
 
 .input-forgot {
-    color: #5f5a5a;
-    text-decoration: none;
-    padding: 15px 10px 0 0;
+  color: #5f5a5a;
+  text-decoration: none;
+  padding: 15px 10px 0 0;
+}
+
+.footer-bottom {
+  display: flex;
+  color: #5f5a5a;
+  padding-top: 80px;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
 }
