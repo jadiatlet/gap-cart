@@ -1,7 +1,16 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: 'Dosis', sans-serif;
+  font-family: "Dosis", sans-serif;
+}
+
+.title {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  font-size: 45px;
+  color: #ff9e16;
+  font-family: "Kaushan Script", cursive;
 }
 
 .container {
@@ -25,13 +34,13 @@
 }
 
 .login-image {
-  padding: 140px 0 30px 0;
+  padding: 20px 0 0 100px;
   width: 80%;
   height: 80%;
 }
 
 .container-form {
-  padding-top: 120px;
+  padding-top: 20px;
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -39,49 +48,69 @@
 }
 
 .label-1 {
-    font-size: 20pt;
+  font-size: 20pt;
 }
 
 .label-2 {
-    font-size: 12pt;
-    padding: 10px 0 0 0 ;
-    color: #535151;
+  font-size: 12pt;
+  padding: 10px 0 0 0;
+  color: #535151;
 }
 
 .form-link {
-    display: flex;
-    width: 75%;
-    justify-content: flex-start;
-    flex-direction: column;
-    padding-top: 15px;
+  display: flex;
+  width: 75%;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding-top: 15px;
 }
 
 .email {
-    padding: 20px 0 2px 15px;
+  padding: 20px 0 2px 15px;
 }
 
 .input-form {
-    border: 0px ;
-    background: #e4f5da;
-    border-radius: 50px;
-    padding: 15px 25px;
-    font-size: 12pt;
+  border: 0px;
+  background: #f8d39f;
+  border-radius: 50px;
+  padding: 15px 25px;
+  font-size: 12pt;
+}
+
+.submit-list {
+  display: flex;
+  padding-top: 20px;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .input-submit {
-    margin: 15px 0px 0 0px ;
-    width: 30%;
-    padding: 10px;
-    border: 0px;
-    border-radius: 20px;
-    background: #62ff77;
-    color: #ffffff;
-    letter-spacing: 7px;
-    font-size: 12pt;
-    font-weight: 900;
+  width: 30%;
+  padding: 10px;
+  border: 0px;
+  border-radius: 20px;
+  background: #ff9e16;
+  color: #ffffff;
+  letter-spacing: 7px;
+  font-size: 12pt;
+  font-weight: 900;
 }
 
 .input-submit:hover {
-    background: #91f19e;
-    cursor: pointer;
+  background: #f8b454;
+  cursor: pointer;
+}
+
+.input-forgot {
+  color: #5f5a5a;
+  text-decoration: none;
+  padding: 15px 10px 0 0;
+}
+
+.footer-bottom {
+  display: flex;
+  color: #5f5a5a;
+  padding-top: 80px;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
 }
