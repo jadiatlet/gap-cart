@@ -189,3 +189,35 @@ body {
 
 /* Payment */
 
+.payment {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 15px;
+}
+
+.payment div {
+  margin: 7px;
+}
+
+.calculate-button {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 8px 20px;
+  border-radius: 5px;
+  border: 2px solid;
+  cursor: pointer;
+  margin: 5px 0 5px 15px;
+  outline: none;
+  background: #81d4fa;
+  color: #01579b;
+}
+
+.payment input {
+  color: #455a64;
+  outline: none;
+  border-radius: 5px;
+  border: 0.5px solid #78909c;
+  background: #fafafa;
+  padding: 5px;
+}

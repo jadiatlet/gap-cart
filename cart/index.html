@@ -35,51 +35,51 @@
         <section>
           <div class="option-cart">
             <div class="select-catagory">
-              <select name="" id="">
-                <option value="" selected>Choose Catagory...</option>
-                <option value="">Basic Food</option>
-                <option value="">Clothes</option>
-                <option value="">Stationary</option>
+              <select name="catagory" id="catagory" class="catagoryItems">
+                <option value="" selected>--Choose Catagory--</option>
+                <option value="Basic Food">Basic Food</option>
+                <option value="Clothes">Clothes</option>
+                <option value="Stationary">Stationary</option>
               </select>
             </div>
 
             <div class="select-items">
               <select name="basic-food" id="basic-food" class="items1">
-                <option value="" selected>Select Foods...</option>
-                <option value="">Rice</option>
-                <option value="">Egg</option>
-                <option value="">Bread</option>
-                <option value="">Sugar</option>
-                <option value="">Onions</option>
+                <option value="" selected>--Foods--</option>
+                <option value="9500">Rice</option>
+                <option value="11000">Egg</option>
+                <option value="7500">Bread</option>
+                <option value="9000">Sugar</option>
+                <option value="5000">Onions</option>
               </select>
 
               <select name="clothes" id="clothes" class="items2">
-                <option value="" selected>Select Clothes...</option>
-                <option value="">T-Shirt</option>
-                <option value="">Jeans</option>
-                <option value="">Jacket</option>
-                <option value="">Panties</option>
-                <option value="">Hat</option>
+                <option value="" selected>--Clothes--</option>
+                <option value="65000">T-Shirt</option>
+                <option value="350000">Jeans</option>
+                <option value="500000">Jacket</option>
+                <option value="10000">Panties</option>
+                <option value="33000">Hat</option>
               </select>
 
               <select name="stationary" id="stationary" class="items3">
-                <option value="" selected>Select Stationary...</option>
-                <option value="">Pen</option>
-                <option value="">Pencil</option>
-                <option value="">Book</option>
-                <option value="">Eraser</option>
-                <option value="">Ruler</option>
+                <option value="" selected>--Stationary--</option>
+                <option value="4000">Pen</option>
+                <option value="1500">Pencil</option>
+                <option value="2000">Book</option>
+                <option value="1000">Eraser</option>
+                <option value="3000">Ruler</option>
               </select>
             </div>
           </div>
 
           <div class="price-item">
-            <h3 class="price-tag">200000</h3>
+            <h3 class="price-tag"></h3>
           </div>
 
           <div class="qty-item">
             <span>Qty :</span>
-            <input type="number">
+            <input type="number" id="qty-item">
           </div>
 
           <div class="control-button">
@@ -116,7 +116,7 @@
               <input type="text" name="change">
             </div>
             <div class="">
-              <button>Calculate Change</button>
+              <button class="calculate-button">Calculate Change</button>
             </div>
           </div>
         </section>
