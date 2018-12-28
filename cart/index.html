@@ -36,7 +36,7 @@
           <div class="option-cart">
             <div class="select-catagory">
               <select name="catagory" id="catagory" class="catagoryItems">
-                <option value="" selected>--Choose Catagory--</option>
+                <option value="" selected>-Choose Catagory-</option>
                 <option value="Basic Food">Basic Food</option>
                 <option value="Clothes">Clothes</option>
                 <option value="Stationary">Stationary</option>
@@ -45,7 +45,7 @@
 
             <div class="select-items">
               <select name="basic-food" id="basic-food" class="items1">
-                <option value="" selected>--Foods--</option>
+                <option value="" selected>-Foods-</option>
                 <option value="9500">Rice</option>
                 <option value="11000">Egg</option>
                 <option value="7500">Bread</option>
@@ -54,7 +54,7 @@
               </select>
 
               <select name="clothes" id="clothes" class="items2">
-                <option value="" selected>--Clothes--</option>
+                <option value="" selected>-Clothes-</option>
                 <option value="65000">T-Shirt</option>
                 <option value="350000">Jeans</option>
                 <option value="500000">Jacket</option>
@@ -63,7 +63,7 @@
               </select>
 
               <select name="stationary" id="stationary" class="items3">
-                <option value="" selected>--Stationary--</option>
+                <option value="" selected>-Stationary-</option>
                 <option value="4000">Pen</option>
                 <option value="1500">Pencil</option>
                 <option value="2000">Book</option>
@@ -73,19 +73,21 @@
             </div>
           </div>
 
-          <div class="price-item">
-            <h3 class="price-tag"></h3>
-          </div>
+          <form id="price-item">
+            <div>
+              <h3 class="price-tag">0</h3>
+            </div>
 
-          <div class="qty-item">
-            <span>Qty :</span>
-            <input type="number" id="qty-item">
-          </div>
+            <div class="qty-item">
+              <span>Qty :</span>
+              <input type="number" id="qty-item">
+            </div>
 
-          <div class="control-button">
-            <button class="add-item">Add Item</button>
-            <button class="delete-last-item">Delete Last Item</button>
-          </div>
+            <div class="control-button">
+              <input type="submit" class="add-item" value="Add Item">
+              <button class="delete-last-item">Delete Last Item</button>
+            </div>
+          </form>
 
         </section>
 
@@ -99,7 +101,10 @@
                 <th>Total</th>
               </tr>
             </thead>
-            <tbody id="book-list"></tbody>
+            <tbody id="item-list">
+              <!-- <tr>
+              </tr> -->
+            </tbody>
           </table>
 
           <div class="payment">

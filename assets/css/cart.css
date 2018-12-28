@@ -144,7 +144,7 @@ body {
   margin-top: 50px;
 }
 
-.control-button button {
+.control-button input, button {
   font-size: 12px;
   font-weight: bold;
   padding: 8px 20px;
@@ -183,7 +183,7 @@ body {
 
 .cart-table th,
 .cart-table td {
-  padding: 2.5px 60px;
+  padding: 2.5px 55px;
   border: 1px solid #d9d7ce;
 }
 
