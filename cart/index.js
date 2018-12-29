@@ -2,11 +2,15 @@ const foodOption = document.querySelector('.items1')
 const clothesOption = document.querySelector('.items2')
 const stationaryOption = document.querySelector('.items3')
 
+const food = document.getElementById('basic-food')
+const clothes = document.getElementById('clothes')
+const stationary = document.getElementById('stationary')
+
 const form = document.getElementById('price-item')
 const priceOfItem = document.querySelector('.price-tag')
 const qtyItem = document.getElementById('qty-item')
 
-const selectCatagory = document.getElementById('catagory').addEventListener('change', () => {
+document.getElementById('catagory').addEventListener('change', () => {
   const catagoryItems = document.querySelector('.catagoryItems').value
 
   if (catagoryItems === 'Clothes') {
@@ -25,43 +29,48 @@ const selectCatagory = document.getElementById('catagory').addEventListener('cha
 })
 
 const handleFood = () => {
-  const selectFood = foodOption.value
-  priceOfItem.innerHTML = selectFood
+  const selectFood = JSON.parse(foodOption.value)
+  priceOfItem.innerHTML = selectFood.price
 }
 
 const handleclothes = () => {
-  const selectClothes = clothesOption.value
-  priceOfItem.innerHTML = selectClothes
+  const selectClothes = JSON.parse(clothesOption.value)
+  priceOfItem.innerHTML = selectClothes.price
 }
 
 const handleStationary = () => {
-  const selectStationary = stationaryOption.value
-  priceOfItem.innerHTML = selectStationary
+  const selectStationary = JSON.parse(stationaryOption.value)
+  priceOfItem.innerHTML = selectStationary.price
 }
 
-const food = document.getElementById('basic-food').addEventListener('change', handleFood)
-const clothes = document.getElementById('clothes').addEventListener('change', handleclothes)
-const stationary = document.getElementById('stationary').addEventListener('change', handleStationary)
+food.addEventListener('change', handleFood)
+clothes.addEventListener('change', handleclothes)
+stationary.addEventListener('change', handleStationary)
 
 form.addEventListener('submit', event => {
   event.preventDefault()
 
-  const selectFood = Number.parseInt(foodOption.value)
-  const selectClothes = Number.parseInt(clothesOption.value)
-  const selectStationary = Number.parseInt(stationaryOption.value)
+  const selectFood = JSON.parse(foodOption.value)
+  const selectClothes = JSON.parse(clothesOption.value)
+  const selectStationary = JSON.parse(stationaryOption.value)
   const qty = qtyItem.value
 
-  const result = selectFood * qty
+  let result = []
+
+  result.push(selectFood, selectClothes, selectStationary)
 
   const itemList = document.getElementById('item-list')
   const row = document.createElement('tr')
 
-  row.innerHTML = `
-    <td></td>
-    <td>${selectFood}</td>
+  result.forEach(item => {
+    const total = item.price * qty
+    row.innerHTML = `
+    <td>${item.name}</td>
+    <td>${item.price}</td>
     <td>${qty}</td>
-    <td>${result}</td>
+    <td>${total}</td>
   `
+  })
 
   itemList.appendChild(row)
 })
