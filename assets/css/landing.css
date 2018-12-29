@@ -1,0 +1,186 @@
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo {
+  font-family: "Kaushan Script", cursive;
+  color: #ffffff;
+  padding: 20px;
+}
+
+.header-container {
+  background-color: #ff9e16;
+  display: flex;
+  align-items: center;
+}
+
+.header-container .logo-container {
+  flex: 1;
+}
+
+.header-container .logo-size {
+  height: 30px;
+  margin: 7px 7px;
+}
+
+.header-container .login {
+  background-color: #c4c4c4;
+  height: 20px;
+  margin-right: 7px;
+  border-radius: 10px;
+  padding: 7px 15px;
+}
+
+.header-container .login a {
+  text-decoration: none;
+  color: #333;
+  font-family: "Dosis", sans-serif;
+  font-weight: 900;
+}
+
+main .carousel-section {
+  height: 90vh;
+  background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .carousel-section h3 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+/* Title fo All Section */
+main .section-title {
+  font-family: "Dosis", sans-serif;
+  text-align: center;
+}
+
+/* Benfit Section */
+main .benefit-section {
+  height: 100%;
+  background-color: #ff9e16;
+  display: flex;
+  flex-direction: column;
+}
+
+main .benefit-section .benefit-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-bottom: 30px;
+}
+
+main .benefit-section .benefit-container .benefit-content {
+  background-color: #fff;
+  height: 30vh;
+  width: 30vh;
+  font-family: "Dosis", sans-serif;
+  font-size: 90%;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Developer Team Section */
+main .team-section {
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+main .team-section .team-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+main .team-section .team-container .person-container {
+  width: 30%;
+  height: 100%;
+  /* background-color: #ff9e16; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main .team-section .team-container .person-container .profile-picture img {
+  height: 27vh;
+  margin-top: 10px;
+  border-radius: 50%;
+}
+
+main .team-section .team-container .person-container .bio {
+  font-family: "Dosis", sans-serif;
+  text-align: center;
+}
+
+main .team-section .team-container .person-container .bio h4,
+p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+main .team-section .team-container .person-container .socmed img {
+  height: 4vh;
+  margin-bottom: 10px;
+}
+
+/* Technology-that-we-used  Section*/
+main .our-technology {
+  background-color: #ff9e16;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+main .our-technology .technology-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+main .our-technology .technology-list img {
+  height: 10vh;
+  padding: 10px;
+}
+
+main .our-client {
+  display: flex;
+  flex-direction: column;
+}
+
+main .our-client .client-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .our-client .client-list img {
+  width: 70%;
+}
+
+footer {
+  background-color: #ff9e16;
+  font-family: "Dosis", sans-serif;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+footer hr {
+  height: 10px;
+  border: 0;
+  box-shadow: 0 10px 10px -10px #333333 inset;
+}
