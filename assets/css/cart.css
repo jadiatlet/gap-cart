@@ -1,6 +1,6 @@
 body {
   background: #f5f5f5;
-  font-family: 'News Cycle', sans-serif;
+  font-family: "News Cycle", sans-serif;
 }
 
 .area {
@@ -16,7 +16,7 @@ body {
   margin: 22px;
   font-weight: 600;
   text-decoration: none;
-} 
+}
 
 .navbar {
   justify-content: space-between;
@@ -48,7 +48,7 @@ body {
 .heading-title {
   display: flex;
   justify-content: center;
-  font-family: 'Kaushan Script', cursive;
+  font-family: "Kaushan Script", cursive;
   font-size: 25px;
   color: #ff9e16;
 }
@@ -73,28 +73,21 @@ body {
 
 /* Option > Select */
 
-.option-cart {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-}
 
-.select-catagory, .select-items {
+.select-catagory,
+.select-items {
   margin: 15px 0;
-  padding: 0 15px;
+  display: flex;
+  justify-content: center;
 }
 
-.option-cart select {
+.select-items select {
   padding: 2px 10px;
   background: transparent;
   border-radius: 5px;
   color: #455a64;
   outline: none;
   cursor: pointer;
-}
-
-.items2, .items3 {
-  display: none;
 }
 
 /* Price Item */
@@ -118,15 +111,14 @@ body {
   margin: 20px 15px;
   display: flex;
   justify-content: center;
-
 }
 
-.qty-item span{
+.qty-item span {
   color: #455a64;
   margin-right: 15px;
 }
 
-.qty-item input{
+.qty-item input {
   width: 65px;
   color: #455a64;
   outline: none;
@@ -144,7 +136,8 @@ body {
   margin-top: 50px;
 }
 
-.control-button input, button {
+.control-button input,
+button {
   font-size: 12px;
   font-weight: bold;
   padding: 8px 20px;
@@ -168,12 +161,18 @@ body {
 /* Table Display */
 
 .cart-table {
-  border: 1px solid #78909c;
-  padding-bottom: 300px;
-  margin: 15px 15px;
+  /* margin: 15px 15px; */
   color: #455a64;
   font-size: 14px;
   line-height: 20px;
+}
+
+.form {
+  margin: 15px;
+  border: 1px solid #78909c;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
 }
 
 .cart-table th {
@@ -183,8 +182,12 @@ body {
 
 .cart-table th,
 .cart-table td {
-  padding: 2.5px 55px;
+  padding: 2.5px 35px;
   border: 1px solid #d9d7ce;
+}
+
+.remove {
+  color: red;
 }
 
 /* Payment */

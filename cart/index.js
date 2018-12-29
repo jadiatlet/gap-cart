@@ -1,78 +1,45 @@
-const foodOption = document.querySelector('.items1')
-const clothesOption = document.querySelector('.items2')
-const stationaryOption = document.querySelector('.items3')
+const selectItem = document.getElementById("select-item");
 
-const food = document.getElementById('basic-food')
-const clothes = document.getElementById('clothes')
-const stationary = document.getElementById('stationary')
+const form = document.getElementById("price-item");
+const priceOfItem = document.querySelector(".price-tag");
+const qtyItem = document.getElementById("qty-item");
 
-const form = document.getElementById('price-item')
-const priceOfItem = document.querySelector('.price-tag')
-const qtyItem = document.getElementById('qty-item')
+const deleteBtn = document.querySelector(".remove");
 
-document.getElementById('catagory').addEventListener('change', () => {
-  const catagoryItems = document.querySelector('.catagoryItems').value
+const handleItem = () => {
+  const valueItem = JSON.parse(selectItem.value);
+  priceOfItem.innerHTML = valueItem.price;
+};
 
-  if (catagoryItems === 'Clothes') {
-    foodOption.style.display = 'none'
-    stationaryOption.style.display = 'none'
-    clothesOption.style.display = 'block'
-  } else if (catagoryItems === 'Stationary') {
-    foodOption.style.display = 'none'
-    clothesOption.style.display = 'none'
-    stationaryOption.style.display = 'block'
-  } else {
-    foodOption.style.display = 'block'
-    clothesOption.style.display = 'none'
-    stationaryOption.style.display = 'none'
+selectItem.addEventListener("change", handleItem);
+
+form.addEventListener("submit", event => {
+  event.preventDefault();
+
+  const valueItem = JSON.parse(selectItem.value);
+  const qty = qtyItem.value;
+
+  const itemList = document.getElementById("item-list");
+  const row = document.createElement("tr");
+
+  const total = valueItem.price * qty;
+  row.innerHTML = `
+  <td>${valueItem.name}</td>
+  <td>${valueItem.price}</td>
+  <td>${qty}</td>
+  <td>${total}</td>
+  <td><a href="#"><i class="remove fas fa-trash-alt"></i></a></td>
+`;
+
+  itemList.appendChild(row);
+
+  qtyItem.value = null;
+});
+
+deleteBtn.addEventListener("click", event => {
+  if (event.target.classList.contains("remove")) {
+    event.target.parentElement.parentElement.parentElement.remove();
   }
-})
 
-const handleFood = () => {
-  const selectFood = JSON.parse(foodOption.value)
-  priceOfItem.innerHTML = selectFood.price
-}
-
-const handleclothes = () => {
-  const selectClothes = JSON.parse(clothesOption.value)
-  priceOfItem.innerHTML = selectClothes.price
-}
-
-const handleStationary = () => {
-  const selectStationary = JSON.parse(stationaryOption.value)
-  priceOfItem.innerHTML = selectStationary.price
-}
-
-food.addEventListener('change', handleFood)
-clothes.addEventListener('change', handleclothes)
-stationary.addEventListener('change', handleStationary)
-
-form.addEventListener('submit', event => {
-  event.preventDefault()
-
-  const selectFood = JSON.parse(foodOption.value)
-  const selectClothes = JSON.parse(clothesOption.value)
-  const selectStationary = JSON.parse(stationaryOption.value)
-  const qty = qtyItem.value
-
-  let result = []
-
-  result.push(selectFood, selectClothes, selectStationary)
-
-  const itemList = document.getElementById('item-list')
-  const row = document.createElement('tr')
-
-  result.forEach(item => {
-    const total = item.price * qty
-    row.innerHTML = `
-    <td>${item.name}</td>
-    <td>${item.price}</td>
-    <td>${qty}</td>
-    <td>${total}</td>
-  `
-  })
-
-  itemList.appendChild(row)
-})
-
-
+  console.log(e.target)
+});

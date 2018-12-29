@@ -33,44 +33,28 @@
       <div class="main-app">
 
         <section>
-          <div class="option-cart">
-            <div class="select-catagory">
-              <select name="catagory" id="catagory" class="catagoryItems">
-                <option value="" selected>-Choose Catagory-</option>
-                <option value="Basic Food">Basic Food</option>
-                <option value="Clothes">Clothes</option>
-                <option value="Stationary">Stationary</option>
-              </select>
-            </div>
-
-            <div class="select-items">
-              <select name="basic-food" id="basic-food" class="items1">
-                <option value="" selected>-Foods-</option>
-                <option value='{"price": 9500, "name": "Rice"}'>Rice</option>
-                <option value='{"price": 11000, "name": "Egg"}'>Egg</option>
-                <option value='{"price": 7500, "name": "Bread"}'>Bread</option>
-                <option value='{"price": 9000, "name": "Sugar"}'>Sugar</option>
-                <option value='{"price": 5000, "name": "Onions"}'>Onions</option>
-              </select>
-
-              <select name="clothes" id="clothes" class="items2">
-                <option value="" selected>-Clothes-</option>
-                <option value='{"price": 65000, "name": "T-Shirt"}'>T-Shirt</option>
-                <option value='{"price": 350000, "name": "Jeans"}'>Jeans</option>
-                <option value='{"price": 500000, "name": "Jacket"}'>Jacket</option>
-                <option value='{"price": 10000, "name": "Panties"}'>Panties</option>
-                <option value='{"price": 33000, "name": "Hat"}'>Hat</option>
-              </select>
-
-              <select name="stationary" id="stationary" class="items3">
-                <option value="" selected>-Stationary-</option>
-                <option value='{"price": 4000, "name": "Pen"}'>Pen</option>
-                <option value='{"price": 1500, "name": "Pencil"}'>Pencil</option>
-                <option value='{"price": 2000, "name": "Book"}'>Book</option>
-                <option value='{"price": 1000, "name": "Eraser"}'>Eraser</option>
-                <option value='{"price": 3000, "name": "Ruler"}'>Ruler</option>
-              </select>
-            </div>
+          <div class="select-items">
+            <select name="select-item" id="select-item" class="items">
+              <option selected>-Chosse Items-</option>
+              <option disabled>-Foods-</option>
+              <option value='{"price": 9500, "name": "Rice"}'>Rice</option>
+              <option value='{"price": 11000, "name": "Egg"}'>Egg</option>
+              <option value='{"price": 7500, "name": "Bread"}'>Bread</option>
+              <option value='{"price": 9000, "name": "Sugar"}'>Sugar</option>
+              <option value='{"price": 5000, "name": "Onions"}'>Onions</option>
+              <option disabled>-Clothes-</option>
+              <option value='{"price": 65000, "name": "T-Shirt"}'>T-Shirt</option>
+              <option value='{"price": 350000, "name": "Jeans"}'>Jeans</option>
+              <option value='{"price": 500000, "name": "Jacket"}'>Jacket</option>
+              <option value='{"price": 10000, "name": "Panties"}'>Panties</option>
+              <option value='{"price": 33000, "name": "Hat"}'>Hat</option>
+              <option disabled>-Stationary-</option>
+              <option value='{"price": 4000, "name": "Pen"}'>Pen</option>
+              <option value='{"price": 1500, "name": "Pencil"}'>Pencil</option>
+              <option value='{"price": 2000, "name": "Book"}'>Book</option>
+              <option value='{"price": 1000, "name": "Eraser"}'>Eraser</option>
+              <option value='{"price": 3000, "name": "Ruler"}'>Ruler</option>
+            </select>
           </div>
 
           <form id="price-item">
@@ -85,13 +69,14 @@
 
             <div class="control-button">
               <input type="submit" class="add-item" value="Add Item">
-              <button class="delete-last-item">Delete Last Item</button>
+              <button id="delete-button" class="delete-last-item">Delete Last Item</button>
             </div>
           </form>
 
         </section>
 
         <section class="display-app">
+          <div class="form">
           <table class="cart-table">
             <thead>
               <tr>
@@ -99,13 +84,14 @@
                 <th>Unit Price</th>
                 <th>Amount Purchased</th>
                 <th>Total</th>
+                <th>Remove Item</th>
               </tr>
             </thead>
             <tbody id="item-list">
 
             </tbody>
           </table>
-
+          </div>
           <div class="payment">
             <div class="">
               <label for="total">Grand Total :</label>
