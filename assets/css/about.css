@@ -1,0 +1,218 @@
+body {
+  margin: 0;
+}
+
+.text-content {
+  color: #666;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo {
+  font-family: "Kaushan Script", cursive;
+  color: #ffffff;
+  padding: 20px;
+}
+
+.header-container {
+  background-color: #ff9e16;
+  display: flex;
+  align-items: center;
+}
+
+.header-container .logo-container {
+  flex: 1;
+}
+
+.header-container .logo-size {
+  height: 30px;
+  margin: 7px 7px;
+}
+
+.header-container .login {
+  background-color: #c4c4c4;
+  height: 20px;
+  margin-right: 7px;
+  border-radius: 10px;
+  padding: 7px 15px;
+}
+
+.header-container .login a {
+  text-decoration: none;
+  color: #333;
+  font-family: "Dosis", sans-serif;
+  font-weight: 900;
+}
+
+main .carousel-section {
+  height: 90vh;
+  background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .carousel-section h3 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+/* Title fo All Section */
+main .section-title {
+  font-family: "Dosis", sans-serif;
+  text-align: center;
+}
+
+/* Benfit Section */
+main .benefit-section {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 10px -10px #333333 inset;
+}
+
+main .benefit-section .benefit-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-bottom: 10px;
+}
+
+main .benefit-section .benefit-container .benefit-content {
+  /* background-color: #fff; */
+  width: 200px;
+  font-family: "Dosis", sans-serif;
+  font-size: 90%;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 35px;
+}
+
+main .benefit-section .benefit-container .benefit-content img {
+  height: 150px;
+  padding-bottom: 20px;
+}
+
+main .benefit-section .benefit-container .benefit-content h4 {
+  margin-block-start: 0;
+}
+
+main .benefit-section .benefit-container .benefit-content span {
+  text-align: center;
+}
+
+
+/* Developer Team Section */
+main .team-section {
+  background-color: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 10px -10px #333333 inset;
+}
+
+main .team-section .team-container {
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 20px;
+}
+
+main .team-section .team-container .person-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main .team-section .team-container .person-container .profile-picture img {
+  height: 180px;
+  margin-top: 10px;
+  border-radius: 50%;
+}
+
+main .team-section .team-container .person-container .bio {
+  font-family: "Dosis", sans-serif;
+  text-align: center;
+}
+
+main .team-section .team-container .person-container .bio h4,
+p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+main .team-section .team-container .person-container .socmed img {
+  height: 25px;
+  margin-bottom: 10px;
+}
+
+/* Technology-that-we-used  Section*/
+main .our-technology {
+  background-color: #ff9e16;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px -10px #333333 inset;
+}
+
+main .our-technology .technology-list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 25px;
+
+}
+
+main .our-technology .technology-list img {
+  height: 60px;
+  padding: 10px;
+}
+
+/* Our CLient Section */
+main .our-client {
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f7f7;
+
+  box-shadow: 0 10px 10px -10px #333333 inset;
+}
+
+main .our-client .client-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .our-client .client-list img {
+  width: 70%;
+}
+
+
+footer .office {
+  background-color: #4b4b4b;
+  color: #ffffff;
+  text-align: center;
+  font-family: "Dosis", sans-serif;
+  padding: 20px;
+  box-shadow: 0 10px 10px -10px #ffffff inset;
+
+}
+
+footer .copyright {
+  background-color: #313131;
+  color: #808080;
+  padding: 10px;
+  text-align: center;
+  font-size: 1em;
+  font-family: "Dosis", sans-serif;
+}
