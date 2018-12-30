@@ -4,7 +4,7 @@ const form = document.getElementById("price-item");
 const priceOfItem = document.querySelector(".price-tag");
 const qtyItem = document.getElementById("qty-item");
 
-const deleteBtn = document.querySelector(".remove");
+const deleteBtn = document.getElementById(".remove");
 
 const handleItem = () => {
   const valueItem = JSON.parse(selectItem.value);
@@ -28,7 +28,7 @@ form.addEventListener("submit", event => {
   <td>${valueItem.price}</td>
   <td>${qty}</td>
   <td>${total}</td>
-  <td><a href="#"><i class="remove fas fa-trash-alt"></i></a></td>
+  <td><a href="#"><i id="remove" class="remove fas fa-trash-alt"></i></a></td>
 `;
 
   itemList.appendChild(row);
@@ -36,10 +36,19 @@ form.addEventListener("submit", event => {
   qtyItem.value = null;
 });
 
-deleteBtn.addEventListener("click", event => {
-  if (event.target.classList.contains("remove")) {
-    event.target.parentElement.parentElement.parentElement.remove();
-  }
+if (deleteBtn) {
+  deleteBtn.addEventListener("click", event => {
+    if (event.target.classList.contains("remove")) {
+      // event.target.parentElement.parentElement.parentElement.remove();
+      const deleteRow = event.target.parentNode.parentNode.parentNode
+      deleteRow.parentNode.removeChild(deleteRow)
 
-  console.log(e.target)
-});
+      console.log(event.target)
+      console.log(deleteRow)
+    }
+
+    // const deleteRow = event.target.parentNode.parentNode.parentNode
+    // deleteRow.parentNode.removeChild(deleteRow)
+
+  });
+}
