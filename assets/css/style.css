@@ -101,6 +101,7 @@ a {
   border-radius: 50px;
   padding: 15px 25px;
   font-size: 12pt;
+  outline: none;
 }
 
 .submit-list {
@@ -120,6 +121,7 @@ a {
   letter-spacing: 7px;
   font-size: 12pt;
   font-weight: 900;
+  outline: none;
 }
 
 .input-submit:hover {
