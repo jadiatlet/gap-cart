@@ -153,6 +153,7 @@ main .team-section .team-container .person-container .socmed img {
   margin-bottom: 10px;
 }
 
+
 /* Technology-that-we-used  Section*/
 main .our-technology {
   background-color: #ff9e16;
@@ -178,26 +179,40 @@ main .our-technology .technology-list img {
   padding: 10px;
 }
 
+
 /* Our CLient Section */
 main .our-client {
+  background-color: #ff9e16;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
-  background-color: #f7f7f7;
-
   box-shadow: 0 10px 10px -10px #333333 inset;
 }
 
 main .our-client .client-list {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 25px;
 }
 
 main .our-client .client-list img {
-  width: 70%;
+  height: 60px;
+  padding: 10px;
+  transition: transform .2s;
+}
+
+main .our-client .client-list img:hover {
+  transform: scale(3);
+  background-color: #ff9e16;
+  /* border-radius: 30%; */
 }
 
 
+/* footer section */
 footer .office {
   background-color: #4b4b4b;
   color: #ffffff;
