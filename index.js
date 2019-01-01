@@ -24,4 +24,4 @@ const submitLogin = event => {
 
 }
 
-formLogin.addEventListener("submit" , submitLogin)
+formLogin.addEventListener("submit", submitLogin)
