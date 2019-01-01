@@ -4,20 +4,33 @@
   font-family: "Dosis", sans-serif;
 }
 
+a {
+  color: #d17d08;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* Title Style  */
+
 .title {
-  padding-top: 50px;
+  padding-top: 20px;
   display: flex;
   justify-content: center;
   font-size: 45px;
   color: #ff9e16;
   font-family: "Kaushan Script", cursive;
+  margin-bottom: -50px;
 }
+
+/* Main Style  */
 
 .container {
   height: 100%;
   display: flex;
   justify-content: center;
 }
+
+/* ----Main Left Side Style--- */
 
 .container-item-left {
   display: flex;
@@ -26,17 +39,30 @@
   width: 100%;
 }
 
-.container-item-right {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
 
 .login-image {
-  padding: 20px 0 0 100px;
+  padding: 60px 0 0 100px;
   width: 80%;
   height: 80%;
+}
+
+/* ---Main Right Side Style--- */
+
+.container-item-right {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-top: 110px;
+  flex-direction: column;
+}
+
+.form-top {
+  display: flex;
+  width: 80%;
+  padding-bottom: 40px;
+  border: 2px solid #f8b454 ;
+  border-radius: 10px;
+  box-shadow: 2px 5px 25px 10px #f8b45423 ;
 }
 
 .container-form {
@@ -113,10 +139,27 @@
   padding: 15px 10px 0 0;
 }
 
+.form-bottom{
+  display: flex;
+  justify-content: center;
+  font-size: 13pt;
+  width: 80%;
+  margin-top: 10px;
+  border: 2px solid #f8b454 ;
+  border-radius: 10px;
+  box-shadow: 2px 5px 25px 10px #f8b45423 ;
+}
+
+.form-text-bottom {
+  padding: 10px;
+}
+
+/* Footer Style  */
+
 .footer-bottom {
   display: flex;
   color: #5f5a5a;
-  padding-top: 80px;
+  padding-top: 50px;
   justify-content: center;
   font-family: "Roboto", sans-serif;
 }
