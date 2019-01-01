@@ -12,11 +12,9 @@ const submitLogin = event => {
 
     if (email === "admin" && password === "admin") {
 
-        window.open("/cart/index.html")
+        window.location.assign("/cart/index.html")
 
-        // window.close()
-
-        closeWindow()
+        // closeWindow()
 
     } else {
 
