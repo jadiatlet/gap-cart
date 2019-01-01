@@ -42,6 +42,10 @@ class UI {
     document.querySelector(".price-tag").innerHTML = 0
     document.getElementById("qty-item").value = null
   }
+
+  // clearItems() {
+
+  // }
 }
 
 // Store to Local Storage 
@@ -84,6 +88,12 @@ class Store {
 
     localStorage.setItem('items', JSON.stringify(items))
   }
+
+  static clearItems() {
+    if (confirm('Are you sure deleting All Item(s) Beybeh?')) {
+      localStorage.clear()
+    }
+  }
 }
 
 // Disolay List Item from Local Stirage
@@ -99,8 +109,8 @@ document.getElementById("select-item").addEventListener("change", () => {
 // Event Listener Add Item
 document.getElementById('price-item').addEventListener('click', e => {
   // GET Value
-  const selectItem = document.getElementById("select-item")
-  const valueItem = JSON.parse(selectItem.value)
+  const selectItem = document.getElementById("select-item").value
+  const valueItem = JSON.parse(selectItem)
   const qtyItem = document.getElementById("qty-item").value
   const itemName = valueItem.name
   const itemPrice = valueItem.price
@@ -131,4 +141,9 @@ document.getElementById('item-list').addEventListener('click', e => {
   Store.removeItem(target)
 
   e.preventDefault()
+})
+
+// Event Clear All Items From Local Storages
+document.getElementById('clear-button').addEventListener('click', () => {
+  Store.clearItems()
 })
