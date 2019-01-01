@@ -1,54 +1,88 @@
-const selectItem = document.getElementById("select-item");
+class Cart {
+  constructor(item, price, qty, total) {
+    this.item = item
+    this.price = price
+    this.qty = qty
+    this.total = total
+  }
+}
 
-const form = document.getElementById("price-item");
-const priceOfItem = document.querySelector(".price-tag");
-const qtyItem = document.getElementById("qty-item");
+class UI {
+  addItemToList(cart) {
+    const list = document.getElementById('item-list')
+    // Create tr element
+    const row = document.createElement('tr')
 
-const deleteBtn = document.getElementById(".remove");
+    row.innerHTML = `
+    <td>${cart.item}</td>
+    <td>${cart.price}</td>
+    <td>${cart.qty}</td>
+    <td>${cart.total}</td>
+    <td><a href="#"><i class="delete fas fa-trash-alt"></i></a></td>
+  `;
+    list.appendChild(row)
+  }
 
-const handleItem = () => {
-  const valueItem = JSON.parse(selectItem.value);
-  priceOfItem.innerHTML = valueItem.price;
-};
+  displayItemPrice() {
+    const priceOfItem = document.querySelector(".price-tag");
+    const valueItem = JSON.parse(document.getElementById("select-item").value)
+    priceOfItem.innerHTML = valueItem.price;
+  }
 
-selectItem.addEventListener("change", handleItem);
+  deleteItem(target) {
+    if (target.classList.contains('delete')) {
+      if (confirm('Are You Sure Beybeh?')) {
+        target.parentElement.parentElement.parentElement.remove()
+      }
+    }
+  }
 
-form.addEventListener("submit", event => {
-  event.preventDefault();
+  clearField() {
+    document.getElementById("select-item").value = null
+    document.querySelector(".price-tag").innerHTML = 0
+    document.getElementById("qty-item").value = null
+  }
+}
 
-  const valueItem = JSON.parse(selectItem.value);
-  const qty = qtyItem.value;
-
-  const itemList = document.getElementById("item-list");
-  const row = document.createElement("tr");
-
-  const total = valueItem.price * qty;
-  row.innerHTML = `
-  <td>${valueItem.name}</td>
-  <td>${valueItem.price}</td>
-  <td>${qty}</td>
-  <td>${total}</td>
-  <td><a href="#"><i id="remove" class="remove fas fa-trash-alt"></i></a></td>
-`;
-
-  itemList.appendChild(row);
-
-  qtyItem.value = null;
+// Display Price of Item
+document.getElementById("select-item").addEventListener("change", () => {
+  // Initiate UI
+  const ui = new UI()
+  ui.displayItemPrice()
 });
 
-if (deleteBtn) {
-  deleteBtn.addEventListener("click", event => {
-    if (event.target.classList.contains("remove")) {
-      // event.target.parentElement.parentElement.parentElement.remove();
-      const deleteRow = event.target.parentNode.parentNode.parentNode
-      deleteRow.parentNode.removeChild(deleteRow)
+// Event Listener Add Item
+document.getElementById('price-item').addEventListener('click', e => {
+  // GET Value
+  const selectItem = document.getElementById("select-item")
+  const valueItem = JSON.parse(selectItem.value)
+  const qtyItem = document.getElementById("qty-item").value
+  const itemName = valueItem.name
+  const itemPrice = valueItem.price
+  const total = itemPrice * qtyItem
 
-      console.log(event.target)
-      console.log(deleteRow)
-    }
+  // Initiate Cart
+  const cart = new Cart(itemName, itemPrice, qtyItem, total)
 
-    // const deleteRow = event.target.parentNode.parentNode.parentNode
-    // deleteRow.parentNode.removeChild(deleteRow)
+  // Initiate UI
+  const ui = new UI()
 
-  });
-}
+  console.log(ui)
+
+  if (qtyItem === null) {
+    alert('Failed')
+  }
+
+  ui.addItemToList(cart)
+  ui.clearField()
+
+  e.preventDefault()
+})
+
+// Event Listener Delete Item
+document.getElementById('item-list').addEventListener('click', e => {
+  const ui = new UI()
+  ui.deleteItem(e.target)
+
+  e.preventDefault()
+})

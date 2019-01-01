@@ -98,6 +98,10 @@
   outline: none;
 }
 
+.input-submit a {
+  text-decoration: none;
+}
+
 .input-submit:hover {
   background: #f8b454;
   cursor: pointer;
