@@ -9,7 +9,8 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
     crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Dosis|Kaushan+Script|Roboto" rel="stylesheet" />
-
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>  
 <body>
   <header>
     <h1 class="title"><i class="fas fa-shopping-cart"></i>GAP - Cart</h1>
@@ -20,19 +21,19 @@
     </div>
     <div class="container-item-right">
       <div class="form-top">
-        <form class="container-form">
+        <form class="container-form" id="form-login">
           <label class="label-1">Access your account</label>
           <label class="label-2">
             Fill in with your email and password to process
           </label>
           <div class="form-link">
             <label class="label-2 email">email</label>
-            <input type="text" class="input-form" placeholder="yourname@domain" />
+            <input type="text" class="input-form" id="email-form" placeholder="yourname@domain" required />
             <label class="label-2 email">password</label>
-            <input type="password" class="input-form" placeholder="&bull; &bull; &bull; &bull; &bull; &bull; &bull;" />
+            <input type="password" class="input-form" id="password-form" placeholder="&bull; &bull; &bull; &bull; &bull; &bull; &bull;" required/>
             <div class="submit-list">
-              <input type="submit" value="SUBMIT" class="input-submit" />
-              <a href="/" class="input-forgot">Forgot Password ?</a>
+              <input type="submit" value="LOGIN" class="input-submit"/>
+              <a href="#" class="input-forgot">Forgot Password ?</a>
             </div>
           </div>
         </form>
@@ -43,8 +44,9 @@
     </div>
   </div>
   </div>
-
   <footer class="footer-bottom">&copy;GAP-Cart 2018</footer>
+
+  <script src="./index.js"></script>
 </body>
 
 </html>
