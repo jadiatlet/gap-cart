@@ -39,7 +39,6 @@ a {
   width: 100%;
 }
 
-
 .login-image {
   padding: 60px 0 0 100px;
   width: 80%;
@@ -60,9 +59,9 @@ a {
   display: flex;
   width: 80%;
   padding-bottom: 40px;
-  border: 2px solid #f8b454 ;
+  border: 2px solid #f8b454;
   border-radius: 10px;
-  box-shadow: 2px 5px 25px 10px #f8b45423 ;
+  box-shadow: 2px 5px 25px 10px #f8b45423;
 }
 
 .container-form {
@@ -101,7 +100,12 @@ a {
   border-radius: 50px;
   padding: 15px 25px;
   font-size: 12pt;
+  color: #222222;
+}
+
+.input-form:focus {
   outline: none;
+  border: 1px solid #fab14cb0;
 }
 
 .submit-list {
@@ -139,15 +143,15 @@ a {
   padding: 15px 10px 0 0;
 }
 
-.form-bottom{
+.form-bottom {
   display: flex;
   justify-content: center;
   font-size: 13pt;
   width: 80%;
   margin-top: 10px;
-  border: 2px solid #f8b454 ;
+  border: 2px solid #f8b454;
   border-radius: 10px;
-  box-shadow: 2px 5px 25px 10px #f8b45423 ;
+  box-shadow: 2px 5px 25px 10px #f8b45423;
 }
 
 .form-text-bottom {
