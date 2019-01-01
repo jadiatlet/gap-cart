@@ -104,7 +104,7 @@ class Store {
   }
 }
 
-// Disolay List Item from Local Stirage
+// Disolay List Item from Local Storage
 document.addEventListener('DOMContentLoaded', Store.displayItem)
 
 // Display Price of Item
@@ -154,4 +154,24 @@ document.getElementById('item-list').addEventListener('click', e => {
 // Event Clear All Items From Local Storages
 document.getElementById('clear-button').addEventListener('click', () => {
   Store.clearItems()
+})
+
+// Event Listener Calculate Cart
+document.getElementById('calculate-button').addEventListener('click', e => {
+  const grandTotal = document.getElementById('grand-total')
+  const cash = document.getElementById('cash')
+  const change = document.getElementById('change')
+
+  if (cash.value === null) {
+    alert('Please pay the bill !')
+  } else {
+    change.value = Number.parseInt(cash.value - grandTotal.value)
+  }
+
+  if (change.value < 0) {
+    alert('Your money is not enough !')
+    change.value = null
+  }
+
+  e.preventDefault()
 })

@@ -92,23 +92,23 @@
               </tbody>
             </table>
           </div>
-          <div class="payment">
+          <form class="payment">
             <div class="">
               <label for="total">Grand Total :</label>
-              <input type="text" name="total" id="grand-total">
+              <input type="text" name="total" id="grand-total" disabled>
             </div>
             <div class="">
               <label for="cash">Cash :</label>
-              <input type="text" name="cash">
+              <input type="number" name="cash" id="cash">
             </div>
             <div class="">
               <label for="change">Cahnge Due :</label>
-              <input type="text" name="change">
+              <input type="number" name="change" id="change">
             </div>
             <div class="">
-              <button class="calculate-button">Calculate Change</button>
+              <input type="submit" value="Calculate Change" class="calculate-button" id="calculate-button">
             </div>
-          </div>
+          </form>
         </section>
       </div>
     </main>
