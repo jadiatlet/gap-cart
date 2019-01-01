@@ -1,6 +1,6 @@
 class Cart {
-  constructor(item, price, qty, total) {
-    this.item = item
+  constructor(name, price, qty, total) {
+    this.name = name
     this.price = price
     this.qty = qty
     this.total = total
@@ -14,7 +14,7 @@ class UI {
     const row = document.createElement('tr')
 
     row.innerHTML = `
-    <td>${cart.item}</td>
+    <td>${cart.name}</td>
     <td>${cart.price}</td>
     <td>${cart.qty}</td>
     <td>${cart.total}</td>
@@ -44,6 +44,51 @@ class UI {
   }
 }
 
+// Store to Local Storage 
+class Store {
+  static getItem() {
+    let items
+    if (localStorage.getItem('items') === null) {
+      items = []
+    } else {
+      items = JSON.parse(localStorage.getItem('items'))
+    }
+
+    return items
+  }
+
+  static displayItem() {
+    const items = Store.getItem()
+
+    items.forEach(item => {
+      const ui = new UI
+      ui.addItemToList(item)
+    })
+  }
+
+  static addItem(item) {
+    const items = Store.getItem()
+    items.push(item)
+
+    localStorage.setItem('items', JSON.stringify(items))
+  }
+
+  static removeItem(target) {
+    const items = Store.getItem()
+
+    items.forEach((item, index) => {
+      if (item.price === Number.parseInt(target)) {
+        items.splice(index, 1)
+      }
+    })
+
+    localStorage.setItem('items', JSON.stringify(items))
+  }
+}
+
+// Disolay List Item from Local Stirage
+document.addEventListener('DOMContentLoaded', Store.displayItem)
+
 // Display Price of Item
 document.getElementById("select-item").addEventListener("change", () => {
   // Initiate UI
@@ -67,13 +112,11 @@ document.getElementById('price-item').addEventListener('click', e => {
   // Initiate UI
   const ui = new UI()
 
-  console.log(ui)
-
-  if (qtyItem === null) {
-    alert('Failed')
-  }
-
   ui.addItemToList(cart)
+
+  // Add to Local Storage
+  Store.addItem(cart)
+
   ui.clearField()
 
   e.preventDefault()
@@ -82,7 +125,10 @@ document.getElementById('price-item').addEventListener('click', e => {
 // Event Listener Delete Item
 document.getElementById('item-list').addEventListener('click', e => {
   const ui = new UI()
+  const target = e.target.parentElement.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.textContent
+
   ui.deleteItem(e.target)
+  Store.removeItem(target)
 
   e.preventDefault()
 })
