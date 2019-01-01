@@ -7,7 +7,7 @@ class Cart {
   }
 }
 
-class UI {
+class UserInterface {
   addItemToList(cart) {
     const list = document.getElementById('item-list')
     // Create tr element
@@ -21,6 +21,8 @@ class UI {
     <td><a href="#"><i class="delete fas fa-trash-alt"></i></a></td>
   `;
     list.appendChild(row)
+
+    Store.totalItem()
   }
 
   displayItemPrice() {
@@ -42,10 +44,6 @@ class UI {
     document.querySelector(".price-tag").innerHTML = 0
     document.getElementById("qty-item").value = null
   }
-
-  // clearItems() {
-
-  // }
 }
 
 // Store to Local Storage 
@@ -65,7 +63,7 @@ class Store {
     const items = Store.getItem()
 
     items.forEach(item => {
-      const ui = new UI
+      const ui = new UserInterface
       ui.addItemToList(item)
     })
   }
@@ -75,6 +73,16 @@ class Store {
     items.push(item)
 
     localStorage.setItem('items', JSON.stringify(items))
+  }
+
+  static totalItem() {
+    const items = Store.getItem()
+    const grandTotal = document.getElementById('grand-total')
+    const initialValue = 0
+
+    grandTotal.value = items.reduce((accumulator, num) => {
+      return accumulator + num.total
+    }, initialValue)
   }
 
   static removeItem(target) {
@@ -102,7 +110,7 @@ document.addEventListener('DOMContentLoaded', Store.displayItem)
 // Display Price of Item
 document.getElementById("select-item").addEventListener("change", () => {
   // Initiate UI
-  const ui = new UI()
+  const ui = new UserInterface()
   ui.displayItemPrice()
 });
 
@@ -120,7 +128,7 @@ document.getElementById('price-item').addEventListener('click', e => {
   const cart = new Cart(itemName, itemPrice, qtyItem, total)
 
   // Initiate UI
-  const ui = new UI()
+  const ui = new UserInterface()
 
   ui.addItemToList(cart)
 
@@ -134,7 +142,7 @@ document.getElementById('price-item').addEventListener('click', e => {
 
 // Event Listener Delete Item
 document.getElementById('item-list').addEventListener('click', e => {
-  const ui = new UI()
+  const ui = new UserInterface()
   const target = e.target.parentElement.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.textContent
 
   ui.deleteItem(e.target)

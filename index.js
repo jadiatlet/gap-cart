@@ -12,7 +12,7 @@ const submitLogin = event => {
 
     if (email === "admin" && password === "admin") {
 
-        window.open("/cart/index.html")
+        window.open("/cart/")
 
         // window.close()
 
@@ -26,4 +26,4 @@ const submitLogin = event => {
 
 }
 
-formLogin.addEventListener("submit" , submitLogin)
+formLogin.addEventListener("submit", submitLogin)
