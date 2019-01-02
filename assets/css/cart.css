@@ -294,6 +294,16 @@ body {
   margin-right: auto;
 }
 
+.checkout-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkout-left {
+  display: flex;
+}
+
 .checkout-logo {
   
 }
@@ -301,7 +311,7 @@ body {
 .checkout-body {
   display: flex;
   flex-direction: column;
-  align-content: flex-start;
+  /* justify-content: flex-start; */
 }
 
 .success {
