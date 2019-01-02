@@ -1,9 +1,17 @@
 body {
   margin: 0;
+  font-family: "Dosis", sans-serif;
 }
 
 .text-content {
   color: #666;
+  font-family: "Dosis", sans-serif;
+}
+
+.text-carousel {
+  color: #000000;
+  font-family: "Dosis", sans-serif;
+  font-weight: 500;
 }
 
 a {
@@ -20,6 +28,7 @@ a {
   background-color: #ff9e16;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .header-container .logo-container {
@@ -32,8 +41,7 @@ a {
 }
 
 .header-container .login {
-  background-color: #c4c4c4;
-  height: 20px;
+  background-color: #ffffff;
   margin-right: 7px;
   border-radius: 10px;
   padding: 7px 15px;
@@ -46,17 +54,48 @@ a {
   font-weight: 900;
 }
 
-main .carousel-section {
-  height: 90vh;
-  background-color: aliceblue;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-main .carousel-section h3 {
+/* Carousel Section */
+.carousel-section h3 {
   margin-block-start: 0;
   margin-block-end: 0;
+  color: #313131;
+}
+.carousel {
+  min-height: 85vh;
+}
+
+@media screen and (min-width: 992px) {
+  .carousel-item img {
+    min-height: 85vh;
+    position: relative;
+    bottom: 120px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .carousel-item img {
+    min-height: 85vh;
+  }
+}
+
+.carousel-item .overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0.9;
+  z-index: 1;
+  background-color: #6c63ff;
+}
+
+.carousel-item .gradient {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#6c63ff),
+    to(#4641ff)
+  );
+  background: linear-gradient(90deg, #6c63ff, #4641ff);
 }
 
 /* Title fo All Section */
@@ -102,12 +141,12 @@ main .benefit-section .benefit-container .benefit-content img {
 
 main .benefit-section .benefit-container .benefit-content h4 {
   margin-block-start: 0;
+  text-align: center;
 }
 
 main .benefit-section .benefit-container .benefit-content span {
   text-align: center;
 }
-
 
 /* Developer Team Section */
 main .team-section {
@@ -115,6 +154,7 @@ main .team-section {
   display: flex;
   flex-direction: column;
   box-shadow: 0 10px 10px -10px #333333 inset;
+  flex-wrap: wrap;
 }
 
 main .team-section .team-container {
@@ -153,7 +193,6 @@ main .team-section .team-container .person-container .socmed img {
   margin-bottom: 10px;
 }
 
-
 /* Technology-that-we-used  Section*/
 main .our-technology {
   background-color: #ff9e16;
@@ -171,14 +210,12 @@ main .our-technology .technology-list {
   align-items: center;
   flex-wrap: wrap;
   padding-bottom: 25px;
-
 }
 
 main .our-technology .technology-list img {
   height: 60px;
   padding: 10px;
 }
-
 
 /* Our CLient Section */
 main .our-client {
@@ -202,7 +239,7 @@ main .our-client .client-list {
 main .our-client .client-list img {
   height: 60px;
   padding: 10px;
-  transition: transform .2s;
+  transition: transform 0.2s;
 }
 
 main .our-client .client-list img:hover {
@@ -210,7 +247,6 @@ main .our-client .client-list img:hover {
   background-color: #ff9e16;
   /* border-radius: 30%; */
 }
-
 
 /* footer section */
 footer .office {
@@ -220,7 +256,6 @@ footer .office {
   font-family: "Dosis", sans-serif;
   padding: 20px;
   box-shadow: 0 10px 10px -10px #ffffff inset;
-
 }
 
 footer .copyright {
