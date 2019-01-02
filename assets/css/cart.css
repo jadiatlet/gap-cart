@@ -136,8 +136,7 @@ body {
   margin-top: 50px;
 }
 
-.control-button input,
-button {
+.control-button input, button {
   font-size: 12px;
   font-weight: bold;
   padding: 8px 20px;
@@ -156,6 +155,33 @@ button {
 .delete-last-item {
   background: #ff9800;
   color: #bf360c;
+}
+
+/* Tablet Mode */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .main-app {
+    display: flex;
+    justify-content: center;
+  }
+
+  .responsive {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .main-app {
+    display: flex;
+    justify-content: center;
+  }
+
+  .responsive {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
 }
 
 /* Table Display */
@@ -190,6 +216,10 @@ button {
   color: red;
 }
 
+#item-list {
+  text-align: center;
+}
+
 /* Payment */
 
 .payment {
@@ -203,17 +233,26 @@ button {
   margin: 7px;
 }
 
-.payment .calculate-button {
+.calculate-button, .checkout-button {
   font-size: 12px;
   font-weight: bold;
   padding: 8px 20px;
   border-radius: 5px;
-  border: 2px solid;
   cursor: pointer;
   margin: 5px 0 5px 15px;
   outline: none;
+}
+
+.payment .calculate-button {
   background: #81d4fa;
   color: #01579b;
+  border: 2px solid;
+}
+
+.payment .checkout-button {
+  background: #f3e5f5;
+  color: #4a148c;
+  border: 2px solid;
 }
 
 .payment input {
@@ -226,3 +265,46 @@ button {
   width: 150px;
 }
 
+/* Summary */
+.checkout {
+  background-color: #fff;
+  color: #263238;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
+@media (min-width: 1200px) {
+  .checkout {
+    width: 1140px;
+  }
+}
+
+/* Checkout List */
+.checkout-list {
+  padding: 15px;
+  min-width: 100vh;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.checkout-logo {
+  
+}
+
+.checkout-body {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+}
+
+.success {
+  font-size: 100px;
+  color: #b2ff59;
+}

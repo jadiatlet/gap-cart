@@ -10,8 +10,7 @@ class Cart {
 class UserInterface {
   addItemToList(cart) {
     const list = document.getElementById('item-list')
-    // Create tr element
-    const row = document.createElement('tr')
+    const row = document.createElement('tr')  // Create tr element
 
     row.innerHTML = `
     <td>${cart.name}</td>
@@ -43,6 +42,50 @@ class UserInterface {
     document.getElementById("select-item").value = null
     document.querySelector(".price-tag").innerHTML = 0
     document.getElementById("qty-item").value = null
+  }
+
+  calculateItem(cash, change, grandTotal) {
+    if (cash.value === null) {
+      alert('Please pay the bill !')
+    } else {
+      change.value = Number.parseInt(cash.value - grandTotal.value)
+    }
+
+    if (change.value < 0) {
+      alert('Your money is not enough !')
+      change.value = null
+    }
+  }
+
+  checkout(grandTotal, cash, change) {
+    const checkoutList = document.querySelector('.checkout-list')
+    const checkoutArr = [grandTotal, cash, change]
+    console.log(checkoutArr[4]);
+    // checkoutArr.forEach(item => console.log(typeof item))
+
+    checkoutList.innerHTML = `
+      <div class="checkout-logo">
+        <span><i class="success far fa-check-circle"></i></span>
+      </div>
+
+      <div class="checkout-body">
+        <h3>Your Cart</h3>
+        <table class="checkout-table">
+            <tr>
+              <th>Subtotal</th>
+              <td>${checkoutArr[0]}</td>
+            </tr>
+            <tr>
+              <th>Cash</th>
+              <td>${checkoutArr[1]}</td>
+            </tr>
+            <tr>
+              <th>Change</th>
+              <td>${checkoutArr[1] - checkoutArr[0]}</td>
+            </tr>
+        </table >
+      </div >
+      `
   }
 }
 
@@ -162,16 +205,30 @@ document.getElementById('calculate-button').addEventListener('click', e => {
   const cash = document.getElementById('cash')
   const change = document.getElementById('change')
 
-  if (cash.value === null) {
-    alert('Please pay the bill !')
-  } else {
-    change.value = Number.parseInt(cash.value - grandTotal.value)
-  }
+  const ui = new UserInterface()
 
-  if (change.value < 0) {
-    alert('Your money is not enough !')
-    change.value = null
-  }
+  ui.calculateItem(cash, change, grandTotal)
+
+  e.preventDefault()
+})
+
+// Event Listener Checkout
+document.getElementById('checkout-button').addEventListener('click', e => {
+  const items = Store.getItem()
+
+  items.forEach(item => {
+    const ui = new UserInterface
+
+    // const name = item.name
+    // const price = Number.parseInt(item.price)
+    // const qty = item.qty
+    // const total = item.total
+    const grandTotal = document.getElementById('grand-total').value
+    const cash = document.getElementById('cash').value
+    const change = document.getElementById('change').value
+
+    ui.checkout(grandTotal, cash, change)
+  })
 
   e.preventDefault()
 })
