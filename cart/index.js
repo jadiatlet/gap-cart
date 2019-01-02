@@ -65,25 +65,26 @@ class UserInterface {
 
     checkoutList.innerHTML = `
       <div class="checkout-right">
-       <div class="checkout-logo">
-         <span><i class="success far fa-check-circle"></i></span>
+       <div>
+         <span class="checkout-title-right1"><i class="success fas fa-shopping-cart "></i></span>
+         <p class="checkout-title-right2">GAP - Cart</p>
        </div>
       </div>
 
       <div class = "checkout-left">
        <div class="checkout-body">
-         <h3>Your Cart</h3>
+         <h3 class="checkout-title">Your Cart</h3>
          <table class="checkout-table">
              <tr>
-               <td>Subtotal</td>
+               <td class="checkout-item">&bull; Subtotal</td>
                <td>${checkoutArr[0]}</td>
              </tr>
              <tr>
-               <td>Cash</td>
+               <td class="checkout-item">&bull; Cash</td>
                <td>${checkoutArr[1]}</td>
              </tr>
              <tr>
-               <td>Change</td>
+               <td class="checkout-item">&bull; Change</td>
                <td>${checkoutArr[1] - checkoutArr[0]}</td>
              </tr>
          </table >

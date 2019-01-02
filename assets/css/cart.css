@@ -296,16 +296,29 @@ body {
 
 .checkout-right {
   display: flex;
+  padding-top: 50px;
   justify-content: center;
   align-items: center;
+}
+
+.checkout-title-right2{
+  font-family: "Kaushan Script", cursive;
+  color: #ff9e16;
+  font-weight: bold;
+  font-size: 15pt;
+  margin: -2px 0 0 -7px;
 }
 
 .checkout-left {
   display: flex;
 }
 
-.checkout-logo {
-  
+.checkout-title {
+  font-family: "Kaushan Script", cursive;
+  text-decoration: underline;
+  font-size: 35px;
+  color: #ff9e16;
+  margin-bottom: 0px;
 }
 
 .checkout-body {
@@ -314,7 +327,12 @@ body {
   /* justify-content: flex-start; */
 }
 
+.checkout-item {
+  font-weight: bold;
+  padding-right: 130px;
+}
+
 .success {
-  font-size: 100px;
-  color: #b2ff59;
+  font-size: 70px;
+  color: #ff9e16;  
 }
