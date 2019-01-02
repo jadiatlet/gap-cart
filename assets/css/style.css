@@ -25,9 +25,15 @@ a {
 /* Main Style  */
 
 .container {
-  height: 100%;
   display: flex;
   justify-content: center;
+}
+
+@media (min-width: 481px) and (max-width: 967px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 /* ----Main Left Side Style--- */
@@ -40,7 +46,7 @@ a {
 }
 
 .login-image {
-  padding: 60px 0 0 100px;
+  padding: 60px 0 0 0;
   width: 80%;
   height: 80%;
 }
