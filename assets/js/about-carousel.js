@@ -14,5 +14,5 @@ autoplay()
 
 function autoplay() {
   $('.carousel').carousel('next');
-  setTimeout(autoplay, 45000);
+  setTimeout(autoplay, 3500);
 }

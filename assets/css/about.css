@@ -8,12 +8,6 @@ body {
   font-family: "Dosis", sans-serif;
 }
 
-.text-carousel {
-  color: #000000;
-  font-family: "Dosis", sans-serif;
-  font-weight: 500;
-}
-
 a {
   text-decoration: none;
 }
@@ -29,6 +23,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 
 .header-container .logo-container {
@@ -38,6 +33,11 @@ a {
 .header-container .logo-size {
   height: 30px;
   margin: 7px 7px;
+}
+
+.header-container .title-header {
+  font-size: 5vh;
+  margin: 0.5rem 0 0.5rem 0;
 }
 
 .header-container .login {
@@ -55,13 +55,28 @@ a {
 }
 
 /* Carousel Section */
+.carousel-section {
+  box-shadow: 0 10px 10px -10px #ffffff inset;
+}
+
 .carousel-section h3 {
   margin-block-start: 0;
   margin-block-end: 0;
   color: #313131;
 }
+
 .carousel {
-  min-height: 85vh;
+  min-height: 92vh;
+}
+
+.title-carosel {
+  color: #ffffff;
+}
+
+.text-carousel {
+  color: #ffffff;
+  font-family: "Dosis", sans-serif;
+  font-weight: 500;
 }
 
 @media screen and (min-width: 992px) {
@@ -84,18 +99,20 @@ a {
   width: 100%;
   opacity: 0.9;
   z-index: 1;
-  background-color: #6c63ff;
+  background-color: #545464;
 }
 
 .carousel-item .gradient {
-  background: -webkit-gradient(
-    linear,
+  background: -webkit-gradient(linear,
     left top,
     right top,
-    from(#6c63ff),
-    to(#4641ff)
-  );
-  background: linear-gradient(90deg, #6c63ff, #4641ff);
+    from(#545464),
+    to(#202020));
+  background: linear-gradient(90deg, #545464, #202020);
+}
+
+.carousel-fixed-item .btn {
+  background-color: #ff9e16;
 }
 
 /* Title fo All Section */
